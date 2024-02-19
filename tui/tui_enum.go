@@ -18,8 +18,8 @@ const (
 	OutputModeJSON
 	// OutputModeJSONL is a OutputMode of type JSONL.
 	OutputModeJSONL
-	// Pure protobuf bytes
-	OutputModeBytes
+	// OutputModeBYTES is a OutputMode of type BYTES.
+	OutputModeBYTES
 )
 
 var ErrInvalidOutputMode = fmt.Errorf("not a valid OutputMode, try [%s]", strings.Join(_OutputModeNames, ", "))
@@ -44,7 +44,7 @@ var _OutputModeMap = map[OutputMode]string{
 	OutputModeTUI:   _OutputModeName[0:3],
 	OutputModeJSON:  _OutputModeName[3:7],
 	OutputModeJSONL: _OutputModeName[7:12],
-	OutputModeBytes: _OutputModeName[12:17],
+	OutputModeBYTES: _OutputModeName[12:17],
 }
 
 // String implements the Stringer interface.
@@ -63,14 +63,14 @@ func (x OutputMode) IsValid() bool {
 }
 
 var _OutputModeValue = map[string]OutputMode{
-	_OutputModeName[0:3]:                   OutputModeTUI,
-	strings.ToLower(_OutputModeName[0:3]):  OutputModeTUI,
-	_OutputModeName[3:7]:                   OutputModeJSON,
-	strings.ToLower(_OutputModeName[3:7]):  OutputModeJSON,
-	_OutputModeName[7:12]:                  OutputModeJSONL,
-	strings.ToLower(_OutputModeName[7:12]): OutputModeJSONL,
-	_OutputModeName[12:17]: OutputModeBytes,
-	strings.ToLower(_OutputModeName[12:17]): OutputModeBytes,
+	_OutputModeName[0:3]:                    OutputModeTUI,
+	strings.ToLower(_OutputModeName[0:3]):   OutputModeTUI,
+	_OutputModeName[3:7]:                    OutputModeJSON,
+	strings.ToLower(_OutputModeName[3:7]):   OutputModeJSON,
+	_OutputModeName[7:12]:                   OutputModeJSONL,
+	strings.ToLower(_OutputModeName[7:12]):  OutputModeJSONL,
+	_OutputModeName[12:17]:                  OutputModeBYTES,
+	strings.ToLower(_OutputModeName[12:17]): OutputModeBYTES,
 }
 
 // ParseOutputMode attempts to convert a string to a OutputMode.

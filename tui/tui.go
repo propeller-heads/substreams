@@ -19,7 +19,7 @@ import (
 
 //go:generate go-enum -f=$GOFILE --nocase --marshal --names
 
-// ENUM(TUI, JSON, JSONL)
+// ENUM(TUI, JSON, JSONL, BYTES)
 type OutputMode uint
 
 type TUI struct {
